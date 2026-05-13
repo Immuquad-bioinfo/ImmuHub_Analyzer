@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "immuhub-analyzer"
+version = "0.1.0"
+description = "ImmuHub Analyzer: a lightweight IgBLAST wrapper for IG/TCR analysis"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{name = "ImmuHub"}]
+license = {text = "MIT for wrapper code; bundled NCBI IgBLAST keeps its original license"}
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Scientific/Engineering :: Bio-Informatics"]
+
+[project.scripts]
+immuhub-analyzer = "immuhub_analyzer.cli:main"
+ihub = "immuhub_analyzer.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["immuhub_analyzer*"]
